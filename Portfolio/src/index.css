@@ -1,0 +1,49 @@
+@import 'tailwindcss';
+@import 'lenis/dist/lenis.css';
+
+@theme {
+  --font-display: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', system-ui, sans-serif;
+
+  --color-ink: #0a0a0a;
+  --color-paper: #fafaf9;
+  --color-stone: #a8a29e;
+  --color-mist: #e7e5e4;
+  --color-charcoal: #1c1917;
+}
+
+@layer base {
+  html {
+    @apply scroll-smooth antialiased;
+  }
+
+  body {
+    @apply bg-paper font-sans text-ink overflow-x-hidden;
+  }
+
+  ::selection {
+    @apply bg-ink text-paper;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: var(--font-display);
+  }
+
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .editorial-tracking {
+    letter-spacing: 0.35em;
+  }
+
+  .image-reveal {
+    clip-path: inset(0);
+  }
+}
